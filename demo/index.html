@@ -374,7 +374,7 @@
       handleEvents(rtc);
 
       // init client
-      rtc.client.init(option.appID, function () {
+      rtc.client.init("9a9ad6aa60bc4b83ab996da07b04850b", function () {
         console.log("init success");
 
         /**
@@ -397,7 +397,7 @@
          *      All users in the same channel should have the same type (number or string) of uid.
          *      If you use a number as the user ID, it should be a 32-bit unsigned integer with a value ranging from 0 to (232-1).
         **/
-        rtc.client.join(option.token ? option.token : null, option.channel, option.uid ? +option.uid : null, function (uid) {
+        rtc.client.join(null, option.channel, option.uid ? +option.uid : null, function (uid) {
           Toast.notice("join channel: " + option.channel + " success, uid: " + uid);
           console.log("join channel: " + option.channel + " success, uid: " + uid);
           rtc.joined = true;
