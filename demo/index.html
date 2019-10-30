@@ -35,7 +35,7 @@
               <input type="hidden" placeholder="App ID" name="appID" value="99be5b11204e42598075088d51bad699">
               <div class="input-field">
                 <label for="channel" class="active">Channel</label>
-                <input type="text" placeholder="channel" name="channel" value="vfun">
+                <input type="text" placeholder="channel" name="channel" value="123">
               </div>
               <div class="row" style="margin: 0">
                 <div class="col s12">
@@ -415,11 +415,12 @@
             uid1 = uid2 ;
         }
           console.log(" 33333333333333333333success, uid1: " + uid1);
-        rtc.client.join(tok, option.channel,uid1, function (uid) {
+
+        rtc.client.join(tok, "123",uid1, function (uid) {
 
 
-          Toast.notice("join channel: " + option.channel + " success, uid: " + uid);
-          console.log("join channel: " + option.channel + " success, uid: " + uid);
+          Toast.notice("join channel: 123 success, uid: " + uid);
+          console.log("join channel: 123 success, uid: " + uid);
           rtc.joined = true;
 
           rtc.params.uid = uid;
