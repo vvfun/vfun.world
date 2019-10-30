@@ -126,10 +126,12 @@
     console.log("agora sdk version: " + AgoraRTC.VERSION + " compatible: " + AgoraRTC.checkSystemRequirements());
 
     var uid1 = "1111";
-    var token1 = "00699be5b11204e42598075088d51bad699IABwN0WNbvhvpvoZewavn7v4DngzKHQzCP9+GpumOPswLPfI+dsAAAAAEABuJs9yLJe6XQEA6AMAAAAA";
+    var token1 = "00699be5b11204e42598075088d51bad699IABUy5kxCFsSR9zsJ3S4LEUYg2sq+S+Jf5FroueGFbf3kNJjSIj3yPnbIgB6JV5W55u6XQQAAQB3WLldAgB3WLldAwB3WLldBAB3WLld";
+     var d = Math.ceil(Math.random()*10);
+     var c = d%2;
 
     var uid2 = "2222";
-    var token2 = "00699be5b11204e42598075088d51bad699IADKUXqSJpkj4NXRVHBpnKMiSFNGaatI0t9zJjBneIfbYznbLnkAAAAAEAAkFPwOJpi6XQEA6AMAAAAA";
+    var token2 = "00699be5b11204e42598075088d51bad699IABGo1PLmETX3vz6VxXSrFu3U2AlsHOrL7F7QnsiBdouhNJjSIg52y55IgDvmnvFI5y6XQQAAQCzWLldAgCzWLldAwCzWLldBACzWLld";
 
     var resolutions = [
       {
@@ -407,17 +409,14 @@
 
 
         var tok = token1;
-        if(uid1 == "2222"){
-            tok = token2 ;
-        }
 
+        if(c==0){
+            tok = token2 ;
+            uid1 = uid2 ;
+        }
+          console.log(" 33333333333333333333success, uid1: " + uid1);
         rtc.client.join(tok, option.channel,uid1, function (uid) {
 
-            if(uid == "1111"){
-                uid1="2222";
-            }else if(uid == "2222"){
-                uid1="1111";
-            }
 
           Toast.notice("join channel: " + option.channel + " success, uid: " + uid);
           console.log("join channel: " + option.channel + " success, uid: " + uid);
