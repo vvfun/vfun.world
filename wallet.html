@@ -20,15 +20,27 @@
       $axure.utils.getTransparentGifPath = function() { return 'images/transparent.gif'; };
     </script>
   </head>
+
+  <style>
+
+    .BlanceSpan {
+      font-family: inherit;
+      position: absolute;
+    }
+
+  </style>
+
   <body style="background-color: rgb(38, 38, 38)">
     <div id="base">
       <div class="ax_default image" align="center" style="position: relative; margin-top: 3%">
         <img class="img " style="width: 90%" src="images/vip_daimond_bg.png"/>
-        <span style="color: white; font-size: 1.05rem; font-weight: 500; position: absolute; top: 10%; left: 10%">Balance:</span>
-        <span id="DiamondSpan" style="color: white; font-size: 2rem; font-weight: 600; font-family: PingFangSC-Bold; position: absolute; top: 30%; bottom: auto; left: 0; right: 0"></span>
-        <span style="color: white; font-size: 0.9rem; position: absolute; top: 68%; bottom: auto; left: 0; right: 0">Diamonds</span>
+        <span class="BlanceSpan" style="color: white; font-size: 1.05rem; font-weight: 500; top: 10%; left: 10%">Balance:</span>
+        <span class="BlanceSpan" id="DiamondSpan" style="color: white; font-size: 2rem; font-weight: 600; top: 30%; bottom: auto; left: 0; right: 0"></span>
+        <span class="BlanceSpan" style="color: white; font-size: 0.9rem; top: 68%; bottom: auto; left: 0; right: 0">Diamonds</span>
       </div>
+      <div>
 
+      </div>
     </div>
   </body>
 
