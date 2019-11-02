@@ -23,9 +23,37 @@
 
   <style>
 
+    ul {
+      list-style-type: none;
+      padding-inline-start: 0;
+    }
+
+    li {
+      padding: 0px;
+      overflow: auto;
+      line-height: 3.5rem;
+    }
+
+    li .DescP {
+      color: white;
+      font-size: 1rem;
+      font-family: PingFang SC, Tahoma, Arial;
+    }
+
+    li .PriceP {
+      color: white;
+      font-size: 1rem;
+      font-family: PingFang SC, Tahoma, Arial;
+      margin-right: 5%;
+    }
+
     .BlanceSpan {
-      font-family: Helvetica, Tahoma, Arial;
+      font-family: PingFang SC, Tahoma, Arial;
       position: absolute;
+    }
+
+    .NormalSpan {
+      font-family: PingFang SC, Tahoma, Arial;
     }
 
   </style>
@@ -38,8 +66,12 @@
         <span class="BlanceSpan" id="DiamondSpan" style="color: white; font-size: 2.2rem; font-weight: 600; top: 30%; bottom: auto; left: 0; right: 0"></span>
         <span class="BlanceSpan" style="color: white; font-size: 0.9rem; top: 68%; bottom: auto; left: 0; right: 0">Diamonds</span>
       </div>
-      <div>
-
+      <div style="margin-top: 5%; margin-left: 5%">
+        <span class="NormalSpan" style="font-size: 0.8rem; color: rgb(207, 207, 207)">Recharge Plan</span>
+      </div>
+      <div style="margin-top: 3%; margin-left: 5%">
+        <span class="NormalSpan" style="font-size: 0.9rem; color: white">Minute basis:</span>
+        <ul id="MinuteList"></ul>
       </div>
     </div>
   </body>
@@ -72,6 +104,32 @@
         $('#DiamondSpan').text(diamond + "");
       }
     });
+
+    $.ajax({
+      type: 'POST',
+      url: baseUrl+'vFun/product/list',
+      headers:{
+        authorization:token
+      },
+      dataType: 'json',
+      success: function(data) {
+        var listHT = "";
+        data.data.forEach(function(item, index) {
+          let productID = item.productId;
+          let productDsc = item.desc;
+          let price = "$" + item.money;
+          listHT += "<li onclick='buyProduct("+productID+")'><div>";
+          listHT += "<p class='DescP' style='display: inline-block; float: left'><img style='width: 20px; margin-right: 15px; vertical-align: middle' src='images/vip_diamond_icon.png'>"+productDsc+"</p>";
+          listHT += "<p class='PriceP' style='display: inline-block; float: right'>"+price+"</p>";
+          listHT += "</div></li>";
+        });
+        $('#MinuteList').html(listHT);
+      }
+    });
+    
+    function buyProduct(id) {
+      alert("cooming soon!")
+    }
 
   </script>
 
