@@ -3,6 +3,7 @@
   <head>
     <title>VFUN</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
@@ -19,109 +20,47 @@
       $axure.utils.getTransparentGifPath = function() { return 'images/transparent.gif'; };
     </script>
   </head>
-  <body>
-    <div id="base" class="">
-
-      <!-- Artboard 3 (Group) -->
-      <div id="u0" class="ax_default" data-label="Artboard 3" data-left="0" data-top="-170" data-width="1200" data-height="868">
-
-        <!-- BG (Rectangle) -->
-        <div id="u1" class="ax_default" data-label="BG">
-          <div id="u1_div" class=""></div>
-        </div>
-
-        <!-- Oval 2 (Shape) -->
-        <div id="u2" class="ax_default shape" data-label="Oval 2">
-          <img id="u2_img" class="img " src="images/home/oval_2_u2.png"/>
-        </div>
-
-        <!-- Oval 2 (Shape) -->
-        <div id="u3" class="ax_default shape" data-label="Oval 2">
-          <img id="u3_img" class="img " src="images/home/oval_2_u3.png"/>
-        </div>
-
-        <!-- Oval 2 (Shape) -->
-        <div id="u4" class="ax_default shape" data-label="Oval 2">
-          <img id="u4_img" class="img " src="images/home/oval_2_u4.png"/>
-        </div>
-
-        <!-- Oval 2 (Shape) -->
-        <div id="u5" class="ax_default shape" data-label="Oval 2">
-          <img id="u5_img" class="img " src="images/home/oval_2_u5.png"/>
-        </div>
-
-        <!-- Oval 2 (Shape) -->
-        <div id="u6" class="ax_default shape" data-label="Oval 2">
-          <img id="u6_img" class="img " src="images/home/oval_2_u6.png"/>
-        </div>
-
-        <!-- Oval 2 (Shape) -->
-        <div id="u7" class="ax_default shape" data-label="Oval 2">
-          <img id="u7_img" class="img " src="images/home/oval_2_u7.png"/>
-        </div>
-
-        <!-- Oval 2 (Shape) -->
-        <div id="u8" class="ax_default shape" data-label="Oval 2">
-          <img id="u8_img" class="img " src="images/home/oval_2_u8.png"/>
-        </div>
-
-        <!-- Oval 2 (Shape) -->
-        <div id="u9" class="ax_default shape" data-label="Oval 2">
-          <img id="u9_img" class="img " src="images/home/oval_2_u9.png"/>
-        </div>
-
-        <!-- Oval 2 (Shape) -->
-        <div id="u10" class="ax_default shape" data-label="Oval 2">
-          <img id="u10_img" class="img " src="images/home/oval_2_u8.png"/>
-        </div>
-
-        <!-- Man's video chat (Image) -->
-        <div id="u11" class="ax_default image" data-label="Man's video chat">
-          <img id="u11_img" class="img " src="images/home/man_s_video_chat_u11.png"/>
-        </div>
-
-        <!-- Untitled-1 (Image) -->
-        <div id="u12" class="ax_default image" data-label="Untitled-1">
-          <img id="u12_img" class="img " src="images/home/untitled-1_u12.png"/>
-        </div>
-
-        <!-- VFun new (Image) -->
-        <div id="u13" class="ax_default image" data-label="VFun New">
-          <img id="u13_img" class="img " src="images/home/vfun_new_u13.png"/>
-        </div>
-
-        <div id="u14" class="ax_default image" data-label="Dowload iOS APP">
-	  <a href="https://app.vfun.world/install">
-            <img id="u14_img" class="img " src="images/home/ios-download.png"/>
-	  </a>
-        </div>
-
-        <div id="u15" class="ax_default image" data-label="Download Android APP">
-	  <a href="https://app.vfun.world/install">
-            <img id="u14_img" class="img " src="images/home/android-download.png"/>
-	  </a>
-        </div>
-
-        <!-- Oval 2 (Shape) -->
-        <div id="u16" class="ax_default shape" data-label="Oval 2">
-          <img id="u16_img" class="img " src="images/home/oval_2_u16.png"/>
-        </div>
-
-        <!-- Oval 2 (Shape) -->
-        <div id="u17" class="ax_default shape" data-label="Oval 2">
-          <img id="u17_img" class="img " src="images/home/oval_2_u3.png"/>
-        </div>
-
-        <!-- Unnamed (Image) -->
-        <div id="u18" class="ax_default image">
-          <img id="u18_img" class="img " src="images/home/u18.png"/>
-        </div>
-
-        <!-- Unnamed (Image) -->
-        <div id="u19" class="ax_default image">
-          <img id="u19_img" class="img " src="images/home/u19.png"/>
-        </div>
+  <body style="background-color: rgb(38, 38, 38)">
+    <div id="base">
+      <div class="ax_default image" align="center" style="position: relative; margin-top: 3%">
+        <img class="img " style="width: 90%" src="images/vip_daimond_bg.png"/>
+        <span style="color: white; font-size: 1.05rem; font-weight: 500; position: absolute; top: 10%; left: 10%">Balance:</span>
+        <span id="DiamondSpan" style="color: white; font-size: 2rem; font-weight: 600; font-family: PingFangSC-Bold; position: absolute; top: 30%; bottom: auto; left: 0; right: 0"></span>
+        <span style="color: white; font-size: 0.9rem; position: absolute; top: 68%; bottom: auto; left: 0; right: 0">Diamonds</span>
       </div>
+
     </div>
   </body>
+
+  <script type="text/javascript">
+    var baseUrl = "https://vfun.mixit.fun/";
+    function GetRequest() {
+      var url = location.search;
+      var theRequest = new Object();
+      if (url.indexOf("?") != -1) {
+        var str = url.substr(1);
+        strs = str.split("&");
+        for (var i = 0; i < strs.length; i++) {
+          theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+        }
+      }
+      return theRequest;
+    }
+    let token = GetRequest().id;
+
+    $.ajax({
+      type: 'POST',
+      url: baseUrl+'vFun/user/profile',
+      headers:{
+        authorization:token
+      },
+      dataType: 'json',
+      success: function(data) {
+        let diamond = data.data.diamond;
+        $('#DiamondSpan').text(diamond + "");
+      }
+    });
+
+  </script>
+
 </html>
