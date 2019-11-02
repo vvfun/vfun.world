@@ -70,7 +70,7 @@
         <span class="NormalSpan" style="font-size: 0.8rem; color: rgb(207, 207, 207)">Recharge Plan</span>
       </div>
       <div style="margin-top: 3%; margin-left: 5%">
-        <span class="NormalSpan" style="font-size: 0.9rem; color: white">Minute basis:</span>
+        <span class="NormalSpan" style="font-size: 0.9rem; color: white; margin-bottom: 0">Minute basis:</span>
         <ul id="MinuteList"></ul>
       </div>
     </div>
@@ -119,7 +119,7 @@
           let productDsc = item.desc;
           let price = "$" + item.money;
           listHT += "<li onclick='buyProduct("+productID+")'><div>";
-          listHT += "<p class='DescP' style='display: inline-block; float: left'><img style='width: 16px; margin-right: 15px; vertical-align: middle' src='images/vip_diamond_icon.png'>"+productDsc+"</p>";
+          listHT += "<p class='DescP' style='display: inline-block; float: left'><img style='width: 18px; margin-right: 15px; vertical-align: middle' src='images/vip_diamond_icon.png'>"+productDsc+"</p>";
           listHT += "<p class='PriceP' style='display: inline-block; float: right'>"+price+"</p>";
           listHT += "</div></li>";
         });
