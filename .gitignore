@@ -5,3 +5,4 @@
 /.idea/workspace.xml
 demo
 *.xml
+.DS_Store
