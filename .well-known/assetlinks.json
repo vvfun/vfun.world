@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target" : {
+      "namespace": "android_app",
+      "package_name": "com.mixit.fun",
+      "sha256_cert_fingerprints": ["17:C2:C0:89:C2:79:80:AA:D1:97:D0:8A:44:D6:53:EA:45:A2:E3:22:53:AD:CF:D0:82:16:F9:2D:86:AD:6D:52"]
+  }
+}]
