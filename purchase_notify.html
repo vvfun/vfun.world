@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<script src="js/jquery-1.7.1.min.js"></script>
+<style>
+  .main{
+   text-align: center;
+    background-color: transparent;
+    border-radius: 20px;
+    width: 100%;
+    height: 300px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+</style>
+
+
+<body>
+  <div class="main">
+  <h1>Please wait for a moment.<span id='sec'></span> </h1>
+  </div>
+</body>
+
+
+<script>
+
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1051202855332160');
+
+  function getUrlParam(parame) {
+    var urlfa = location.search;
+    console.log(urlfa)
+    var url = decodeURI(urlfa);
+    var theRequest = new Object();
+    if (url.indexOf("?") != -1) {
+      var str = url.substr(1);
+      strs = str.split("&");
+      for (var i = 0; i < strs.length; i++) {
+        theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+      }
+    }
+    var parameter = theRequest[parame];
+    console.log(parameter)
+    return parameter;
+  }
+  var orderId = getUrlParam('order_id');
+
+  var myVar = setInterval(function(){ myTimer() }, 1000);
+  var num = 20 ;
+
+  function myTimer() {
+    if(num<=0){
+      myStopFunction('timeOut');
+    }
+	$("#sec").text(num+'s')
+    num -- ;
+    $.ajax({
+      url: 'https://t.livego.live/api/pay/statusN?orderId='+orderId,
+      type: 'post',
+      dataType: 'json',
+      success: function (data) {
+        var data1 = data['data'];
+        var status = data1['status'];
+        if(status == 'success'){
+          var productIosId = data1['productIosId'];
+          var money = data1['money'];
+          var orderNo = data1['orderNo'];
+          var uid = data1['uid'];
+          fbq('track', 'Purchase', {currency: "USD", value: money,productId:productIosId,orderNo:orderNo,uid:uid});
+          myStopFunction('Sucess');
+        }else if(status == 'fail'){
+          myStopFunction('Fail');
+        }      
+      }
+    })
+  }
+  function myStopFunction(msg) {
+    if(msg == 'Sucess'){
+      alert('Pay Success,You can leave this page by clicking the return button')
+    }else if(msg == 'Fail'){
+      alert('Pay Fail,You can leave this page by clicking the return button')
+    }else{
+      alert('Pay Pending,You can leave this page by clicking the return button and check the balance later')
+    }
+    clearInterval(myVar);
+  }
+
+</script>
+
+
+</html>
