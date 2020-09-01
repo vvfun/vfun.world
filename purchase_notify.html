@@ -77,7 +77,7 @@
           var money = data1['money'];
           var orderNo = data1['orderNo'];
           var uid = data1['uid'];
-          fbq('track', 'Purchase', {currency: "USD", value: money,productId:productIosId,orderNo:orderNo,uid:uid});
+          fbq('track', 'Purchase', {currency: "USD", value: money,productId:productIosId,orderNo:orderId,uid:uid});
           myStopFunction('Sucess');
         }else if(status == 'fail'){
           myStopFunction('Fail');
