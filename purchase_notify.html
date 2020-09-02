@@ -77,7 +77,13 @@
           var money = data1['money'];
           var orderNo = data1['orderNo'];
           var uid = data1['uid'];
-          fbq('track', 'Purchase', {currency: "USD", value: money,productId:productIosId,orderNo:orderId,uid:uid});
+		  if(data1['reportStatus'] && data1['reportStatus']=='1'){
+			console.log('already report')
+		  }else{
+			fbq('track', 'Purchase', {currency: "USD", value: money,productId:productIosId,orderNo:orderId,uid:uid});
+			sendOver(orderId)
+		  }
+          
           myStopFunction('Sucess');
         }else if(status == 'fail'){
           myStopFunction('Fail');
@@ -85,6 +91,19 @@
       }
     })
   }
+  
+  function sendOver(orderId){
+  
+   $.ajax({
+      url: 'https://t.livego.live/api/pay/report?orderId='+orderId,
+      type: 'post',
+      dataType: 'json',
+      success: function (data) {
+             console.log('report over')
+      }
+    })
+  }
+  
   function myStopFunction(msg) {
     if(msg == 'Sucess'){
       alert('Pay Success,You can leave this page by clicking the return button')
