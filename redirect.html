@@ -236,8 +236,9 @@
 <body>
   <div id="content">
     <h1 id="result">Succeeded</h1>
-    <a id="go-back">Go Back</a>
-    <p id="tips">Automatically redirect after <span id="countDown" style="color: black;">5</span> seconds ...</p>
+    <!--<a id="go-back">Go Back</a> -->
+   
+	<p id="tips">Click the up left icon to go back.</p>
   </div>
   <!-- Dialog -->
   <div id="dialog-modal" style="visibility: visible;">
@@ -303,7 +304,7 @@
       this.style.visibility = "hidden";
     })
     var tips = document.getElementById("tips");
-    var countDown = document.getElementById("countDown");
+    //var countDown = document.getElementById("countDown");
     // 隐藏所有对话框
     function hideDialog() {
       dialogModal.style.visibility = "hidden";
@@ -332,7 +333,7 @@
         return;
       }
       setTimeout(() => {
-        countDown.innerText = --num;
+       // countDown.innerText = --num;
         startCountDown(num, url);
       }, 1000);
     }
@@ -355,7 +356,7 @@
 		else showDialog(false);
       });
       // 启动计时器
-      if(success) startCountDown(5, url);
+     // if(success) startCountDown(5, url);
     }
     /** 在这访问服务器api
      * @parma {string} apiUrl - 服务器API地址。
