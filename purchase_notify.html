@@ -298,7 +298,7 @@
 
   var myVar = setInterval(function(){ myTimer() }, 1000);
 
-    //服务器处理在最下面
+    
     var dialogModal = document.getElementById("dialog-modal");
     var dialogLoading = document.getElementById("dialog-loading");
     var dialogTryAgain = document.getElementById("dialog-tryagain");
@@ -310,7 +310,7 @@
       this.style.visibility = "hidden";
     })*/
     var tips = document.getElementById("tips");
-    // 隐藏所有对话框
+    // hide all dialog
     function hideDialog() {
       dialogModal.style.visibility = "hidden";
     }
@@ -337,26 +337,26 @@
     })
   }
 
-    /** 显示对话框
-     * @parma {boolean} showLoading - true时显示loadingDialog，false时显示tryAgainDialog
+    /** show dialog
+     * @parma {boolean} showLoading - true loadingDialog，false tryAgainDialog
     */
     function showDialog(showLoading){
       dialogModal.style.visibility = "visible";
       dialogLoading.style.display = showLoading ? "block" : "none";
       dialogTryAgain.style.display = showLoading ? "none" : "none";
     }
-    //var x = confirm("显示loadingDialog?");
+    //var x = confirm("display loadingDialog?");
     showDialog(true);
-    // 关闭窗口或者跳转页面
+    // close or redirect
     function closeOrRedirect(url){
       console.log("In closeOrRedirect : "+url);
       if (!url) window.close();
       else window.location.href = url;
     }
 
-    /**服务器返回结果时调用
-     * @parma {boolean} success - 根据服务器返回结果，传入true or false.
-     * @parma {string} url - 失败时，点击Try Again跳转的url.
+    /**service retrun 
+     * @parma {boolean} success true or false.
+     * @parma {string} url 
     */
     function onResponse(success, url) {
       hideDialog();
