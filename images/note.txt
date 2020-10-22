@@ -1,1 +1,15 @@
-1./v/330/m 用来做自动消息的假视频
+9.202010221506
+1.images\v\320\ac:用来做320用户的第一个虚拟call
+
+ago：
+1./v/330/m 用来做330的自动消息的假视频 在代码中写死
+2./v/330/d 用来做330的moments的假视频 dynamic source=sysV1 region_code=in，虚假的330用户，user_type=303,third=4444
+3./v/340/  用来做340的moments的假视频 dynamic source=sysV2 region_code=ma，vfun的中东主播
+4./33/d/   用来做340的moments的假图片 dynamic source=sysint5 region_code =sa ,vfun的中东主播	
+5./mela/   用来做320的moments的假图片 dynamic source=sysint22 region_code =in,mela的主播
+6./v/*.png 用来做印度的moments的假图片 dynamic source=sysint1 region_code =in,虚假的320用户，user_type=502,third=1111
+7./p/      用来做印度主播的moments的假图片 dynamic source=sysint region_code =in,vfun印度主播
+8. dqrpb9wgowsf5.cloudfront.net/ 用来做msdr dynamic source=initF region_code =us,虚假的501用户，user_type=501,third=1111
+
+
+
